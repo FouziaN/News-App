@@ -9,7 +9,7 @@ state = {
 }
 
 fetchnews = () => {
-  fetch('http://newsapi.org/v2/everything?q=tesla&from=2021-02-14&sortBy=publishedAt&apiKey=9ab3b6d0db604bb59953268557b99aff')
+  fetch('http://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=9ab3b6d0db604bb59953268557b99aff')
   .then((res)=>res.json())
   .then((response)=>{
     this.setState({
@@ -49,7 +49,7 @@ render(){
         <View style = {{width : width - 50 , height : 200 , backgroundColor : 'red' , marginBottom : 15 , borderRadius : 15 }}>
           <Image source = {{uri : item.urlToImage }} style = {[StyleSheet.absoluteFill , {borderRadius : 15}]} />
           <View style = {styles.gradient}>
-          <Text style = {{position : 'absolute' , bottom : 0 , color : 'black',padding : 5 , fontSize : 20 }}>{item.title}</Text>
+          <Text style = {{position : 'absolute' , bottom : 0 , color : 'black',padding : 5 , backgroundColor : 'white',fontSize : 20 }}>{item.title}</Text>
           </View>
           </View> 
           </TouchableWithoutFeedback>
